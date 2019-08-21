@@ -83,6 +83,20 @@ class MainActivity : AppCompatActivity() {
                     }
 
                 }
+                deleteButton.setOnClickListener {
+                    parking1?.name = ""
+                    parking1?.brand = ""
+                    parking1?.license = ""
+
+                    nameText.setText(parking1.name)
+                    brandText.setText(parking1.brand)
+                    licenseText.setText(parking1.license)
+
+                    parking1Text.setBackgroundResource(R.color.colorEmpty)
+                    parking1Text.setText(R.string.available)
+                    nameText.requestFocus()
+                    invalidateAll()
+                }
 
 
             }
@@ -94,13 +108,31 @@ class MainActivity : AppCompatActivity() {
                 licenseText.setText(parking2.license)
 
                 updateButton.setOnClickListener {
-                    parking2?.name = nameText.text.toString()
-                    parking2?.brand = brandText.text.toString()
-                    parking2?.license = licenseText.text.toString()
+                    if(nameText.text.toString() != "" && brandText.text.toString() != "" && licenseText.text.toString() != "") {
+                        parking2?.name = nameText.text.toString()
+                        parking2?.brand = brandText.text.toString()
+                        parking2?.license = licenseText.text.toString()
 
-                    parking2Text.setBackgroundResource(R.color.colorBusy)
-                    parking2Text.setText(R.string.busy)
 
+                        parking2Text.setBackgroundResource(R.color.colorBusy)
+                        parking2Text.setText(R.string.busy)
+                        invalidateAll()
+                    }
+
+                }
+                deleteButton.setOnClickListener {
+                    parking2?.name = ""
+                    parking2?.brand = ""
+                    parking2?.license = ""
+
+                    nameText.setText(parking2.name)
+                    brandText.setText(parking2.brand)
+                    licenseText.setText(parking2.license)
+
+                    parking2Text.setBackgroundResource(R.color.colorEmpty)
+                    parking2Text.setText(R.string.available)
+                    nameText.requestFocus()
+                    invalidateAll()
                 }
 
             }
@@ -112,13 +144,31 @@ class MainActivity : AppCompatActivity() {
                 licenseText.setText(parking3.license)
 
                 updateButton.setOnClickListener {
-                    parking3?.name = nameText.text.toString()
-                    parking3?.brand = brandText.text.toString()
-                    parking3?.license = licenseText.text.toString()
+                    if(nameText.text.toString() != "" && brandText.text.toString() != "" && licenseText.text.toString() != "") {
+                        parking3?.name = nameText.text.toString()
+                        parking3?.brand = brandText.text.toString()
+                        parking3?.license = licenseText.text.toString()
 
-                    parking3Text.setBackgroundResource(R.color.colorBusy)
-                    parking3Text.setText(R.string.busy)
 
+                        parking3Text.setBackgroundResource(R.color.colorBusy)
+                        parking3Text.setText(R.string.busy)
+                        invalidateAll()
+                    }
+
+                }
+                deleteButton.setOnClickListener {
+                    parking3?.name = ""
+                    parking3?.brand = ""
+                    parking3?.license = ""
+
+                    nameText.setText(parking3.name)
+                    brandText.setText(parking3.brand)
+                    licenseText.setText(parking3.license)
+
+                    parking3Text.setBackgroundResource(R.color.colorEmpty)
+                    parking3Text.setText(R.string.available)
+                    nameText.requestFocus()
+                    invalidateAll()
                 }
 
             }
