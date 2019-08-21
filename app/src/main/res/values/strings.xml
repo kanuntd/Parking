@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Parking</string>
+    <string name="app_name1">PARKING</string>
+    <string name="image"> </string>
+    <string name="license">License</string>
+    <string name="name">Name</string>
+    <string name="brand">Brand</string>
+    <string name="update">UPDATE</string>
+    <string name="delete">DELETE</string>
+    <string name="available">available</string>
+    <string name="busy">busy</string>
+</resources>
