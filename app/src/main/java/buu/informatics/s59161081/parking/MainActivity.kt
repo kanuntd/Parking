@@ -62,9 +62,8 @@ class MainActivity : AppCompatActivity() {
     }
     private fun manageDetail(numberP : Int){
         val updateButton = binding.updateButton
-        val name = nameText.text.toString()
-        val license = licenseText.text.toString()
-        val brand = brandText.text.toString()
+        val deleteButton = binding.deleteButton
+
         if(numberP == 1){
             binding.apply {
                 nameText.setText(parking1.name)
@@ -72,15 +71,19 @@ class MainActivity : AppCompatActivity() {
                 licenseText.setText(parking1.license)
 
                 updateButton.setOnClickListener {
-                        parking1.name = name
-                        parking1.brand = brand
-                        parking1.license = license
+                    if(nameText.text.toString() != "" && brandText.text.toString() != "" && licenseText.text.toString() != "") {
+                        parking1?.name = nameText.text.toString()
+                        parking1?.brand = brandText.text.toString()
+                        parking1?.license = licenseText.text.toString()
+
 
                         parking1Text.setBackgroundResource(R.color.colorBusy)
                         parking1Text.setText(R.string.busy)
-
+                        invalidateAll()
+                    }
 
                 }
+
 
             }
         }
@@ -91,9 +94,9 @@ class MainActivity : AppCompatActivity() {
                 licenseText.setText(parking2.license)
 
                 updateButton.setOnClickListener {
-                    parking2.name = name
-                    parking2.brand = brand
-                    parking2.license = license
+                    parking2?.name = nameText.text.toString()
+                    parking2?.brand = brandText.text.toString()
+                    parking2?.license = licenseText.text.toString()
 
                     parking2Text.setBackgroundResource(R.color.colorBusy)
                     parking2Text.setText(R.string.busy)
@@ -109,9 +112,9 @@ class MainActivity : AppCompatActivity() {
                 licenseText.setText(parking3.license)
 
                 updateButton.setOnClickListener {
-                    parking3.name = name
-                    parking3.brand = brand
-                    parking3.license = license
+                    parking3?.name = nameText.text.toString()
+                    parking3?.brand = brandText.text.toString()
+                    parking3?.license = licenseText.text.toString()
 
                     parking3Text.setBackgroundResource(R.color.colorBusy)
                     parking3Text.setText(R.string.busy)
