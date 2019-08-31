@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     private val parking1: Parking = Parking("","","")
     private val parking2: Parking = Parking("","","")
     private val parking3: Parking = Parking("","","")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -33,9 +34,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         clickParking1()
-        binding.parking = parking1
-        binding.parking = parking2
-        binding.parking = parking3
+
 
     }
     private fun clickParking1() {
@@ -60,22 +59,17 @@ class MainActivity : AppCompatActivity() {
 //        }
 
     }
+
     private fun manageDetail(numberP : Int){
         val updateButton = binding.updateButton
         val deleteButton = binding.deleteButton
 
         if(numberP == 1){
             binding.apply {
-                nameText.setText(parking1.name)
-                brandText.setText(parking1.brand)
-                licenseText.setText(parking1.license)
-
+                parking = parking1
                 updateButton.setOnClickListener {
                     if(nameText.text.toString() != "" && brandText.text.toString() != "" && licenseText.text.toString() != "") {
-                        parking1?.name = nameText.text.toString()
-                        parking1?.brand = brandText.text.toString()
-                        parking1?.license = licenseText.text.toString()
-
+                        parking = parking1
 
                         parking1Text.setBackgroundResource(R.color.colorBusy)
                         parking1Text.setText(R.string.busy)
@@ -88,9 +82,7 @@ class MainActivity : AppCompatActivity() {
                     parking1?.brand = ""
                     parking1?.license = ""
 
-                    nameText.setText(parking1.name)
-                    brandText.setText(parking1.brand)
-                    licenseText.setText(parking1.license)
+                    parking = parking1
 
                     parking1Text.setBackgroundResource(R.color.colorEmpty)
                     parking1Text.setText(R.string.available)
@@ -103,15 +95,10 @@ class MainActivity : AppCompatActivity() {
         }
         else if(numberP == 2){
             binding.apply {
-                nameText.setText(parking2.name)
-                brandText.setText(parking2.brand)
-                licenseText.setText(parking2.license)
-
+                parking = parking2
                 updateButton.setOnClickListener {
                     if(nameText.text.toString() != "" && brandText.text.toString() != "" && licenseText.text.toString() != "") {
-                        parking2?.name = nameText.text.toString()
-                        parking2?.brand = brandText.text.toString()
-                        parking2?.license = licenseText.text.toString()
+                        parking = parking2
 
 
                         parking2Text.setBackgroundResource(R.color.colorBusy)
@@ -125,9 +112,7 @@ class MainActivity : AppCompatActivity() {
                     parking2?.brand = ""
                     parking2?.license = ""
 
-                    nameText.setText(parking2.name)
-                    brandText.setText(parking2.brand)
-                    licenseText.setText(parking2.license)
+                    parking = parking2
 
                     parking2Text.setBackgroundResource(R.color.colorEmpty)
                     parking2Text.setText(R.string.available)
@@ -139,16 +124,11 @@ class MainActivity : AppCompatActivity() {
         }
         else if(numberP == 3){
             binding.apply {
-                nameText.setText(parking3.name)
-                brandText.setText(parking3.brand)
-                licenseText.setText(parking3.license)
 
+                parking = parking3
                 updateButton.setOnClickListener {
                     if(nameText.text.toString() != "" && brandText.text.toString() != "" && licenseText.text.toString() != "") {
-                        parking3?.name = nameText.text.toString()
-                        parking3?.brand = brandText.text.toString()
-                        parking3?.license = licenseText.text.toString()
-
+                        parking = parking3
 
                         parking3Text.setBackgroundResource(R.color.colorBusy)
                         parking3Text.setText(R.string.busy)
@@ -161,9 +141,7 @@ class MainActivity : AppCompatActivity() {
                     parking3?.brand = ""
                     parking3?.license = ""
 
-                    nameText.setText(parking3.name)
-                    brandText.setText(parking3.brand)
-                    licenseText.setText(parking3.license)
+                    parking = parking3
 
                     parking3Text.setBackgroundResource(R.color.colorEmpty)
                     parking3Text.setText(R.string.available)
